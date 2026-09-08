@@ -1,19 +1,24 @@
+/* =========================================
+   REQUESTS.CSS — Ajustado al Estilo Shrines
+   ========================================= */
+
 /* ===============================
    HERO
 =============================== */
 
 .requests-hero {
-  text-align:center;
-  margin:30px 0 25px;
+  text-align: center;
+  margin: 40px auto 30px;
+  max-width: 700px;
 }
 
 .requests-hero h1 {
-  color:var(--pink-dark);
-  font-size:clamp(22px,4vw,36px);
-  margin-bottom:8px;
-  letter-spacing:2px;
-  text-shadow:
-  2px 2px 0 var(--pink-soft);
+  color: var(--pink-dark);
+  font-family: 'Silkscreen', cursive;
+  font-size: clamp(22px, 4vw, 36px);
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 0px var(--pink-soft);
 }
 
 /* ===============================
@@ -21,22 +26,40 @@
 =============================== */
 
 .requests-layout {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin-bottom:50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 1050px;
+  margin-inline: auto;
+  padding: 0 20px;
 }
 
 .cbox-wrapper {
-  width:100%;
-  max-width:480px;
-  background:var(--white);
-  border:
-  3px solid var(--pink-dark);
-  border-radius:20px;
-  padding:10px;
-  box-shadow:
-  5px 5px 0 rgba(109,47,68,.12);
+  width: 100%;
+  max-width: 480px;
+  background: var(--cream-bg);
+  border: 4px double var(--pink-dark);
+  border-radius: 22px;
+  padding: 14px;
+  box-shadow: 6px 6px 0px var(--pink-soft), 10px 10px 0px var(--pink-main);
+  position: relative;
+}
+
+/* Ojito/Grommet decorativo superior */
+.cbox-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--yellow-accent);
+  border: 3px solid var(--pink-dark);
+  z-index: 4;
 }
 
 /* =========================================
@@ -44,82 +67,86 @@
 ========================================= */
 
 .nanni-comments {
-  text-align:center;
-  padding:12px;
+  text-align: center;
+  padding: 14px 10px;
+  background: var(--pink-light);
+  border-radius: 16px;
+  border: 2px solid var(--pink-soft);
 }
 
 .nanni-comments h3 {
-  color:var(--pink-dark);
-  font-size:16px;
-  margin-bottom:5px;
-  text-shadow:
-  1px 1px 0 var(--pink-soft);
+  color: var(--pink-dark);
+  font-family: 'Silkscreen', cursive;
+  font-size: 15px;
+  margin-bottom: 6px;
+  text-shadow: 1.5px 1.5px 0px var(--pink-soft);
 }
 
 .comment-intro {
-  font-family:'Poppins',sans-serif;
-  font-size:12px;
-  color:var(--text);
-  margin-bottom:15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: var(--pink-deep);
+  margin-bottom: 14px;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 .nanni-comments input,
 .nanni-comments textarea {
-  width:100%;
-  box-sizing:border-box;
-  border:
-  2px solid var(--pink-soft);
-  background:#fff8fc;
-  border-radius:15px;
-  padding:10px;
-  font-family:'Poppins',sans-serif;
-  color:var(--text);
-  margin-bottom:10px;
-  outline:none;
-  transition:.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid var(--pink-dark);
+  background: var(--white);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: var(--text);
+  margin-bottom: 12px;
+  outline: none;
+  transition: all .25s ease;
+  box-shadow: 2px 2px 0px var(--pink-soft);
 }
 
 .nanni-comments textarea {
-  height:100px;
-  resize:none;
+  height: 90px;
+  resize: none;
 }
 
 .nanni-comments input:focus,
 .nanni-comments textarea:focus {
-  border-color:var(--pink-dark);
-  transform:
-  translateY(-2px);
-  box-shadow:
-  0 5px 0 rgba(229,92,138,.15);
+  border-color: var(--pink-deep);
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--pink-main);
 }
 
 /* BOTON */
 .nanni-comments button {
-  width:100%;
-  background:var(--pink-dark);
-  color:white;
-  border:none;
-  border-radius:20px;
-  padding:10px;
-  cursor:pointer;
-  font-family:'Silkscreen',cursive;
-  box-shadow:
-  4px 4px 0 var(--text);
-  transition:.25s var(--ease-kawaii);
+  width: 100%;
+  background: var(--yellow-accent);
+  color: var(--pink-deep);
+  border: 2px solid var(--pink-dark);
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  font-family: 'Silkscreen', cursive;
+  font-size: 11px;
+  letter-spacing: .5px;
+  box-shadow: 3px 3px 0px var(--pink-dark);
+  transition: all .2s cubic-bezier(.34,1.56,.64,1);
 }
 
 .nanni-comments button:hover {
-  background:var(--pink-soft);
-  color:var(--pink-dark);
-  transform:
-  translateY(-3px)
-  scale(1.03);
+  background: var(--pink-main);
+  color: var(--white);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 4px 6px 0px var(--pink-deep);
 }
 
 .nanni-comments button:active {
-  transform:
-  translate(3px,3px);
-  box-shadow:none;
+  transform: translateY(1px);
+  box-shadow: 1px 1px 0px var(--pink-deep);
 }
 
 /* =========================================
@@ -127,75 +154,78 @@
 ========================================= */
 
 #comments-list {
-  margin-top:18px;
-  max-height:420px;
-  overflow-y:auto;
-  padding-right:5px;
-  text-align:left;
+  margin-top: 18px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 5px;
+  text-align: left;
 }
 
 #comments-list::-webkit-scrollbar {
-  width:7px;
+  width: 7px;
 }
 
 #comments-list::-webkit-scrollbar-track {
-  background:#fff0f5;
-  border-radius:10px;
+  background: var(--cream-bg);
+  border-radius: 10px;
 }
 
 #comments-list::-webkit-scrollbar-thumb {
-  background:var(--pink-soft);
-  border-radius:10px;
+  background: var(--pink-soft);
+  border-radius: 10px;
+  border: 1px solid var(--pink-dark);
 }
 
 /* =========================================
-   TARJETA COMENTARIO
+   TARJETA COMENTARIO (Estilo Photocard Coherente)
 ========================================= */
 
 .comment-card {
-  background:#fff8fc;
-  border:
-  2px solid var(--pink-soft);
-  border-radius:18px;
-  padding:12px;
-  margin-bottom:12px;
-  text-align:left;
-  box-shadow:
-  3px 3px 0 rgba(109,47,68,.1);
-  animation:
-  commentAppear .45s var(--ease-kawaii);
-  transition:.25s ease;
+  position: relative;
+  background: var(--white);
+  border: 2.5px solid var(--pink-dark);
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 12px;
+  text-align: left;
+  box-shadow: 3px 3px 0px var(--pink-soft);
+  animation: commentAppear .45s cubic-bezier(.34,1.56,.64,1);
+  transition: all .25s cubic-bezier(.34,1.56,.64,1);
 }
 
 .comment-card:hover {
-  transform:
-  translateX(3px);
-  box-shadow:
-  5px 5px 0 rgba(109,47,68,.15);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 5px 6px 0px var(--pink-main);
+  border-color: var(--pink-deep);
 }
 
 /* NOMBRE */
 .comment-name {
-  font-family:'Silkscreen',cursive;
-  color:var(--pink-dark);
-  font-size:12px;
-  margin-bottom:4px;
+  font-family: 'Silkscreen', cursive;
+  color: var(--pink-deep);
+  font-size: 11px;
+  margin-bottom: 3px;
 }
 
 .comment-date {
-  font-family:'Poppins',sans-serif;
-  font-size:10px;
-  color:#b98799;
-  margin-bottom:8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 9.5px;
+  color: var(--pink-dark);
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .comment-card p {
-  font-family:'Poppins',sans-serif;
-  color:var(--text);
-  font-size:12px;
-  line-height:1.5;
-  margin:0;
-  word-wrap:break-word;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  font-size: 11.5px;
+  line-height: 1.5;
+  margin: 0;
+  word-wrap: break-word;
+  background: var(--cream-bg);
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1.5px solid var(--pink-soft);
 }
 
 /* =========================================
@@ -203,32 +233,22 @@
 ========================================= */
 
 @keyframes commentAppear {
-  0% {
-    opacity:0;
-    transform:
-    translateY(20px)
-    scale(.85);
-  }
-  70% {
-    transform:
-    translateY(-4px)
-    scale(1.03);
-  }
-  100% {
-    opacity:1;
-    transform:
-    translateY(0)
-    scale(1);
-  }
+  0% { opacity: 0; transform: translateY(15px) scale(.92); }
+  60% { transform: translateY(-3px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .empty-comments {
-  font-family:'Poppins',sans-serif;
-  font-size:12px;
-  color:var(--text);
-  text-align:center;
-  padding:15px;
-  animation:commentAppear .5s ease;
+  font-family: 'Silkscreen', cursive;
+  font-size: 11px;
+  color: var(--pink-deep);
+  background: var(--white);
+  border: 2px solid var(--pink-dark);
+  border-radius: 14px;
+  text-align: center;
+  padding: 20px;
+  animation: commentAppear .5s ease;
+  box-shadow: 3px 3px 0px var(--pink-soft);
 }
 
 /* =========================================
@@ -236,32 +256,36 @@
 ========================================= */
 
 .btn-back {
-  display:inline-block;
-  margin-top:20px;
-  color:var(--pink-dark);
-  font-family:'Silkscreen',cursive;
-  font-size:11px;
-  text-decoration:none;
-  border-bottom:2px dashed var(--pink-soft);
-  padding-bottom:2px;
+  display: inline-block;
+  margin-top: 25px;
+  color: var(--pink-dark);
+  font-family: 'Silkscreen', cursive;
+  font-size: 10px;
+  text-decoration: none;
+  border-bottom: 2px dashed var(--pink-main);
+  padding-bottom: 2px;
+  transition: .2s ease;
 }
 
 .btn-back:hover {
-  color:var(--pink-soft);
+  color: var(--pink-deep);
+  border-bottom-style: solid;
 }
 
 /* =========================================
    RESPONSIVE
 ========================================= */
 
-@media (max-width:600px){
-
+@media (max-width: 600px) {
   .requests-hero h1 {
-    font-size:24px;
+    font-size: 24px;
   }
 
   .cbox-wrapper {
-    padding:8px;
+    padding: 10px;
   }
 
+  .requests-layout {
+    padding: 0 16px;
+  }
 }
