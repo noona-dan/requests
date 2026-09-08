@@ -285,6 +285,36 @@
     padding: 10px;
   }
 
+   /* =========================================
+   CORRECCIONES RESPONSIVE (Añadir al final)
+========================================= */
+
+@media (max-width: 600px) {
+  /* Asegura que la página no genere scroll horizontal */
+  body {
+    overflow-x: hidden;
+  }
+
+  .requests-layout {
+    padding: 0 10px; /* Reduce un poco los márgenes laterales en cel */
+  }
+
+  .cbox-wrapper {
+    max-width: 100%; /* Evita que rebase la pantalla del celular */
+    box-shadow: 4px 4px 0px var(--pink-soft), 6px 6px 0px var(--pink-main); /* Reduce un poco las sombras pesadas en móvil */
+  }
+
+  .nanni-comments {
+    padding: 10px 8px;
+  }
+
+  /* Ajusta los textos largos para que no rompan el diseño */
+  .requests-hero h1 {
+    font-size: clamp(20px, 6vw, 28px);
+    letter-spacing: 1px;
+  }
+}
+
   .requests-layout {
     padding: 0 16px;
   }
