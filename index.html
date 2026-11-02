@@ -1,48 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-site-base="https://nanni-archive.neocities.org/">
 <head>
  <link rel="icon" type="image/gif" href="https://cdn-icons-png.flaticon.com/512/16572/16572640.png">
   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://nanni-archive.neocities.org/js/layout.js"></script>
   <meta name="description" content="nanni-archive">
   <meta name="keywords" content="blog personal, nanni, anime, pink aesthetic, 90s web">
   <meta name="author" content="Nanni">
   <title>nanni-archive</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Silkscreen&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://nanni-archive.neocities.org/css/styles.css">
   <link rel="stylesheet" href="css/requests.css">
 </head>
 <body>
 <div class="page">
-  <!-- Header -->
-  <header class="header">
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
-    <label for="nav-toggle" class="hamburger" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    <div class="nav-overlay" onclick="document.getElementById('nav-toggle').checked = false;"></div>
-    <nav class="nav">
-      <a href="https://nanni-archive.neocities.org/" target="_self">HOME</a>
-     <a href="https://nanni-archive.neocities.org/aboutme" target="_self">ABOUT ME</a>
-      <a href="https://nanni-archive.neocities.org/recomendaciones" target="_self">RECs</a>
-      <a href="https://nanni-archive.neocities.org/blogs" target="_self">BLOGS</a>
-      <a href="https://nanni-archive.neocities.org/diario" target="_self">DIARY</a>
-      <a href="https://nanni-archive.neocities.org/galeria" target="_self">GALLERY</a>
-      <a href="https://nanni-archive.neocities.org/archivo" target="_self">ARCHIVE</a>
-      <a href="https://nanni-archive.neocities.org/tutoriales" class="active" target="_self">TUTORIALS</a>
-      <a href="https://nanni-archive.neocities.org/redes" target="_self">LINKS</a>
-      <a href="https://noona-dan.github.io/guestbook/" target="_self">GUESTBOOK</span>
-    </nav>
-    
-    <a href="#mi-footer" target="_self">
-      <img src="img/nannibot.gif" alt="Nanni Archive" width="132" height="46.5" style="image-rendering: pixelated; border: 1px solid #FFD1DC; cursor: pointer;">
-    </a>
-  </header>
+
+  <header class="header" id="site-header"></header>
 
   <section class="requests-hero">
     <h1><span class="pixel-star">✦</span> REQUESTS <span class="pixel-star">✦</span></h1>
@@ -89,11 +67,8 @@
 </div>
 
 <script>
-
 const API = "https://script.google.com/macros/s/AKfycbwNMCVShoJcYUH36yjeCTfnqJqpp1ZSFUs2nPS0Me_msbwKLRKO5X_p7AIY-SedgQo/exec";
 const PAGE = "tutoriales";
-
-
 
 function loadComments(){
 
@@ -102,7 +77,6 @@ function loadComments(){
   if(oldScript){
     oldScript.remove();
   }
-
 
   const script = document.createElement("script");
 
@@ -114,14 +88,9 @@ function loadComments(){
   PAGE +
   "&callback=showComments";
 
-
   document.body.appendChild(script);
 
 }
-
-
-
-
 
 function escapeHTML(text){
 
@@ -134,14 +103,9 @@ function escapeHTML(text){
 
 }
 
-
-
-
 function showComments(comments){
 
-
   const box = document.getElementById("comments-list");
-
 
   if(!comments.length){
 
@@ -155,21 +119,13 @@ function showComments(comments){
 
   }
 
-
-
   box.innerHTML = "";
-
-
 
   [...comments].reverse().forEach(comment => {
 
-
-
     box.innerHTML += `
 
-
     <div class="comment-card">
-
 
       <div class="comment-name">
 
@@ -177,15 +133,11 @@ function showComments(comments){
 
       </div>
 
-
-
       <div class="comment-date">
 
         ${new Date(comment.date).toLocaleDateString()}
 
       </div>
-
-
 
       <p>
 
@@ -193,44 +145,25 @@ function showComments(comments){
 
       </p>
 
-
     </div>
-
 
     `;
 
-
-
   });
-
-
 
 }
 
-
-
-
-
-
 async function sendComment(){
-
-
 
 const name =
 document.getElementById("comment-name")
 .value
 .trim();
 
-
-
 const message =
 document.getElementById("comment-message")
 .value
 .trim();
-
-
-
-
 
 if(!name || !message){
 
@@ -239,10 +172,6 @@ alert("Please write your name and message ♡");
 return;
 
 }
-
-
-
-
 
 fetch(API,{
 
@@ -264,18 +193,9 @@ message:message
 
 });
 
-
-
-
-
-
 document.getElementById("comment-name").value="";
 
 document.getElementById("comment-message").value="";
-
-
-
-
 
 setTimeout(()=>{
 
@@ -283,19 +203,9 @@ loadComments();
 
 },1500);
 
-
-
-
 }
 
-
-
-
-
 loadComments();
-
-
-
 </script>
 
 </body>
